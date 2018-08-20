@@ -50,12 +50,8 @@ jobs:
       - run:
           name: clone charts
           command: |
-            git clone https://github.com/jainishshah17/charts.git && pwd && ls -alt
+            git clone https://github.com/jainishshah17/charts.git
       - run:
-          name: clone charts-testing
+          name: testing
           command: |
-            git clone https://github.com/helm/chart-testing.git && pwd && ls -alt
-      - run:
-          name: run test
-          command: |
-            ./chart-testing/chart-test.sh --no-install
+            docker run --rm -v "$(pwd):/charts" --workdir /charts -e CHART_DIRS=stable gcr.io/kubernetes-charts-ci/chart-testing:v1.0.3 chart_test.sh --no-install
