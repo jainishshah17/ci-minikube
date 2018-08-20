@@ -9,7 +9,6 @@ jobs:
       MINIKUBE_VERSION: v0.28.2
     steps:
       - checkout
-      - setup_remote_docker
       - run:
           name: setup kubectl
           command: |
@@ -48,3 +47,15 @@ jobs:
       - run:
           command: |
             sudo helm version -c 
+      - run:
+          name: clone charts
+          command: |
+            git clone https://github.com/jainishshah17/charts.git
+      - run:
+          name: clone charts-testing
+          command: |
+            git clone https://github.com/helm/chart-testing.git
+      - run:
+          name: run test
+          command: |
+            ./chart-testing/chart-test.sh --no-install
