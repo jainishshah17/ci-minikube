@@ -20,7 +20,7 @@ jobs:
       - run:
           name: setup helm
           command: |
-            curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash && sudo mv helm /usr/local/bin/            
+            curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash           
       - run:
           command: |
             # TODO: remove the --bootstrapper flag once this issue is solved: https://github.com/kubernetes/minikube/issues/2704
