@@ -50,11 +50,11 @@ jobs:
       - run:
           name: clone charts
           command: |
-            git clone https://github.com/jainishshah17/charts.git && pwd
+            git clone https://github.com/jainishshah17/charts.git && pwd && ls -alt
       - run:
           name: clone charts-testing
           command: |
-            git clone https://github.com/helm/chart-testing.git && pwd
+            git clone https://github.com/helm/chart-testing.git && pwd && ls -alt
       - run:
           name: run test
           command: |
