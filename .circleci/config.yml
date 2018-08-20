@@ -54,4 +54,4 @@ jobs:
       - run:
           name: testing
           command: |
-            docker run --rm -v "$(pwd):/charts" --workdir /charts -e CHART_DIRS=stable gcr.io/kubernetes-charts-ci/chart-testing:v1.0.3 chart_test.sh --no-install
+            cd charts && docker run --rm -v "$(pwd):/charts" --workdir /charts -e CHART_DIRS=stable gcr.io/kubernetes-charts-ci/chart-testing:v1.0.3 chart_test.sh --no-install
