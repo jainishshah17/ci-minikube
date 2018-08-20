@@ -46,4 +46,4 @@ jobs:
             sudo helm init
       - run:
           command: |
-            sudo helm version
+            sudo helm version -c 
