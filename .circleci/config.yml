@@ -9,6 +9,7 @@ jobs:
       MINIKUBE_VERSION: v0.28.2
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: setup kubectl
           command: |
